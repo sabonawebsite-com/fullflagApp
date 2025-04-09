@@ -1,0 +1,20 @@
+.about{
+   
+    border: 2px solid rgb(251, 3, 94);
+   
+}
+.about-description{
+    
+   padding: 10px 25px;
+    font-size: 18px;
+    background-color: rgb(42, 40, 40);
+    color: white;
+}
+.about-description span{
+    gap: 5px;
+    color: green;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 26px;
+    border: 1px solid rgb(240, 64, 10)(0, 255, 55);
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>User Data</title>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+</head>  
+<style>
+    /* Custom Advanced CSS */
+    body {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        min-height: 100vh;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+    }
+
+    .container {
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        margin-top: 2rem;
+        backdrop-filter: blur(10px);
+    }
+
+    h2 {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        padding-bottom: 1rem;
+    }
+
+    h2::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 2px;
+        background: #00ff88;
+    }
+
+    a {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        padding: 0.8rem 1.5rem;
+        background: #00ff88;
+        color: #1a1a1a;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+    }
+
+    a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+    }
+
+    #query {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        border-radius: 30px;
+        padding: 1rem 1.5rem;
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+    }
+
+    #query:focus {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: #00ff88;
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        outline: none;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul li {
+        padding: 1.2rem;
+        margin-bottom: 1rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    ul li:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    img{
+        width: 400px;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+
+    /* Animation for list items */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    ul li {
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .container {
+            margin: 1rem;
+            padding: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        #query {
+            padding: 0.8rem 1.2rem;
+        }
+    }
+</style>
+<body>  
+   
+    <div class="container">  
+        <h2>User Data </h2>
+        <h1>Scan Here⬇</h1>
+        <img src="/static/user_port.png" alt="Product data visualization"> 
+        <a href="https://forms.gle/jR7kLzqMPqvMvC6b7">Upload Product</a>
+         
+                <input autocomplete="off" autofocus type="search" id="query" class="form-control" required>  
+           <ul></ul>
+    </div> 
+    <script>
+        let input=document.querySelector('input');
+        input.addEventListener('input',async function(){
+let response =await fetch('/search?q='+input.value);
+let shows=await response.json();
+let html='';
+for(let show of shows){
+    html+='<li>'+show.images + '</li>';
+}
+document.querySelector('ul').innerHTML=html;
+        });
+    </script> 
+</body>  
+</html>

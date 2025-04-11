@@ -47,8 +47,7 @@
     font-size: 20px;
     border-radius: 40px;
     background-color: red;
-    color: white;
-   
+    color: white; 
 }
 .footer-content-left .nameLogo{
     width: 100px;
@@ -56,9 +55,7 @@
     border-radius: 40px;
     border: 8px solid purple;
     margin-top: 0px;
-    margin-bottom: 0px;
-
-    
+    margin-bottom: 0px;   
 }
 .footer-content-left li,.footer-content-right li,.footer-content-center li{
 list-style: none;
@@ -90,6 +87,23 @@ hr{
     cursor: pointer;
     font-size: 20px;
 
+}
+.github{
+    border-radius: 100%;
+    border: 1px solid rgb(10, 25, 233);
+}
+.youtube{
+    border-radius: 100%;
+    border: 1px solid purple;
+}
+.logos{
+    align-items: center;
+    border-radius: 50px;
+   
+}
+.reddit{
+    border-radius: 100%;
+    border: 1px solid rgb(243, 9, 231);
 }
 .afaan-or1{
     margin-bottom: -45px;
@@ -126,7 +140,7 @@ hr{
     .footer-content{
         display: flex;
         flex-direction: column;
-       gap: 35px;
+        gap: 35px;
     }
     .footer{
         gap: 10px;

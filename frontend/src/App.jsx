@@ -14,6 +14,7 @@ import About from './components/About/About'
 import Contact from './components/Contact/Contact'
 import MainDistro from './pages/MainDistro/MainDistro'
 import ChapaPayment from './pages/ChapaPayment/ChapaPayment'
+import Myorder from './pages/Myorder/Myorder'
 // import Searchle from './components/Searchble/Searchle'
 const App = () => {
   const[showlogin,setShowlogin]=useState(false)
@@ -31,7 +32,7 @@ const App = () => {
         <Route path='/order'element={<PlaceOrder/>}/>
         <Route path='/verify' element={<Verify/>}/>
         <Route path='/payment' element={<ChapaPayment/>}/>
-        {/* <Route path='/myorders' element={<Myorder/>}/> */}
+      <Route path='myorders'element={<Myorder/>}/>
         <Route path='/distro' element={<MainDistro/>}/>
       </Routes>
     </div>

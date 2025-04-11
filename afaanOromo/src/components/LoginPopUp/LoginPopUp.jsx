@@ -52,19 +52,20 @@ else{
             {/* <img onClick={()=>setShowlogin(false)} src={assets.cross_icon} alt="" /> */}
         </div>
           <div className="login-pop-up-inputs">
-            {currState==="Login"?<></>: <input autoComplete='off' autoFocus  name='name' onChange={onChangeHandeler} value={data.name} type="text" placeholder='Your Name' required/>}
+            {currState==="Login"?<></>: <input autoComplete='off' autoFocus  name='name' onChange={onChangeHandeler} value={data.name} type="text" placeholder='Maqaa Kee' required/>}
            
-            <input autoComplete='off' autoFocus name='email' onChange={onChangeHandeler} value={data.email}  type="email" placeholder='email' required/>
-            <input autoComplete='off' autoFocus  name='password' onChange={onChangeHandeler} value={data.password}  type="password" placeholder='password' required/>
+            <input autoComplete='off' autoFocus name='email' onChange={onChangeHandeler} value={data.email}  type="email" placeholder='imeelii Kee..' required/>
+            <input autoComplete='off' autoFocus  name='password' onChange={onChangeHandeler} value={data.password}  type="password" placeholder='jecha iccitii' required/>
             {/* <input  name='password' onChange={onChangeHandeler} value={data.password}  type="password" placeholder='Repeat password' required/> */}
           </div>
           <button type='submit'>{currState==="Sign Up"?"Create Account":"Login"}</button>
           <div className="login-pop-up-condition">
               <input type="checkbox" required />
-              <p className='agree'>Continuing  agree with  our privacy </p>
+              <p className='agree'>Itti fufuun iccitii keenya irratti walii galuu </p>
               </div>
-              {currState==="Login"?<p>create new account ?<span onClick={()=>setCurrState("Sign Up")}>click here</span></p>:
-              <p>already have an account?<span onClick={()=>setCurrState("Login")}>login here</span></p>}
+              {currState==="Login"?<p>
+                account haaraa uumuu ?<span onClick={()=>setCurrState("Sign Up")}>as tuqi</span></p>:
+              <p>duraanuu account qabduu?<span onClick={()=>setCurrState("Login")}>as seena</span></p>}
       </form>
     </div>
   )

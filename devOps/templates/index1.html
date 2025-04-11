@@ -1,0 +1,104 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>ATM Banking System🏧</title>  
+</head>  
+<style>
+    /* styles.css */  
+
+body {  
+    font-family: Arial, sans-serif;  
+    background-color: #f4f4f4;  
+    margin: 0;  
+    padding: 20px;  
+}  
+
+h1 {  
+    text-align: center;  
+    color: #333;  
+}  
+
+h2 {  
+    color: #555;  
+}  
+
+form {  
+    background-color: white;  
+    border-radius: 8px;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  
+    margin: 20px auto;  
+    padding: 20px;  
+    max-width: 400px; /* Adjust as needed */  
+}  
+
+input[type="text"],  
+input[type="password"] {  
+    width: 100%;  
+    padding: 10px;  
+    margin: 10px 0;  
+    border: 1px solid #ccc;  
+    border-radius: 5px;  
+    box-sizing: border-box; /* Ensure padding included in width */  
+}  
+
+button {  
+    background-color: #4CAF50; /* Green */  
+    color: white;  
+    padding: 10px;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    width: 100%;  
+}  
+
+button:hover {  
+    background-color: #45a049; 
+}  
+
+ul {  
+    list-style-type: none;  
+    padding: 0;  
+}  
+
+li.success {  
+    color: green;  
+}  
+
+li.error {  
+    color: red;  
+}  
+
+/* Responsive design for smaller screens */  
+@media (max-width: 500px) {  
+    form {  
+        width: 90%; /* Take most of the width on small screens */  
+    }  
+}
+</style>
+<body>  
+    <h1>Baga Nagaan Gara Bankii Kenyaatti Dhuftan</h1>  
+    <form action="/create_account" method="POST">  
+        <h2>Herregaa Banadhuu</h2>  
+        <input type="text" name="username" placeholder="Username" required>  
+        <input type="password" name="password" placeholder="Password" required>  
+        <button type="submit">Galmesii</button>  
+    </form>  
+    <form action="/login" method="POST">  
+        <h2>Seenii</h2>  
+        <input type="text" name="username" placeholder="Username" required>  
+        <input type="password" name="password" placeholder="Password" required>  
+        <button type="submit">Seenii</button>  
+    </form>  
+    {% with messages = get_flashed_messages(with_categories=true) %}  
+        {% if messages %}  
+            <ul>  
+            {% for category, message in messages %}  
+                <li class="{{ category }}">{{ message }}</li>  
+            {% endfor %}  
+            </ul>  
+        {% endif %}  
+    {% endwith %}  
+</body>  
+</html>

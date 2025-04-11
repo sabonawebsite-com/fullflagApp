@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer'
 import LoginPopUp from './components/LoginPopUp/LoginPopUp'
 import PlaceOrder from './pages/PlaceOrder/PlaceOrder'
 import Verify from './pages/Verify/Verify'
-// import Myorder from './pages/Myorder/Myorder'
+import Myorder from './pages/Myorder/Myorder'
 import About from './components/About/About'
 
 import Contact from './components/Contact/Contact'
@@ -31,7 +31,7 @@ const App = () => {
         <Route path='/order'element={<PlaceOrder/>}/>
         <Route path='/verify' element={<Verify/>}/>
         <Route path='/payment' element={<ChapaPayment/>}/>
-        {/* <Route path='/myorders' element={<Myorder/>}/> */}
+        <Route path='/myorders' element={<Myorder/>}/>
         <Route path='/distro' element={<MainDistro/>}/>
       </Routes>
     </div>

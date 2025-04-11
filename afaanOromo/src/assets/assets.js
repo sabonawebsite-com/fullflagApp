@@ -52,7 +52,13 @@ import user from './user.gif'
 import home from './home.gif'
 import user1 from './user1.gif'
 import user_prot from './user_port.png'
+import youtube from './youtube.png'
+import github from './github.png'
+import reddit from './reddit.png'
 export const assets = {
+    youtube,
+    github,
+    reddit,
     user_prot,
     user1,
     user,
@@ -93,39 +99,39 @@ export const assets = {
 
 export const menu_list = [
     {
-        menu_name: "Ox",
+        menu_name: "Sangaa",
         menu_image: menu_1
     },
     {
-        menu_name: "Cow",
+        menu_name: "Sa'aa",
         menu_image: menu_2
     },
     {
-        menu_name: "Camel",
+        menu_name: "Gaala",
         menu_image: menu_3
     },
     {
-        menu_name: "Hen",
+        menu_name: "Lukku",
         menu_image: menu_4
     },
     {
-        menu_name: "Goat",
+        menu_name: "Re'ee",
         menu_image: menu_5
     },
     {
-        menu_name: "Hens",
+        menu_name: "Hoolaa",
         menu_image: menu_6
     },
     {
-        menu_name: "Donkeys",
+        menu_name: "Harree",
         menu_image: menu_7
     },
     {
-        menu_name: "Porducts",
+        menu_name: "omishaalee",
         menu_image: menu_8,
     },
     {
-        menu_name: "Foods",
+        menu_name: "Nyaata",
         menu_image: menu_9
     }
    ]

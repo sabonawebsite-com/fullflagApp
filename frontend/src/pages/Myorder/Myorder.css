@@ -1,22 +1,249 @@
-.Myorder{
-    margin: 50px 0px ;
-}
-.Myorder .order-continers{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 30px;
-}
-.myorders-order{
+/* Contact Form Container */
+.place-order {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .place-order:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Title Styling */
+  .title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #f108de;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  
+  .title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #0984e3 0%, #6c5ce7 100%);
+    border-radius: 2px;
+  }
+  
+  /* Payment Information Section */
+  .cart-total-modif {
+    background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2);
+    animation: paymentPulse 2s infinite;
+  }
+  
+  .cart-total-modif h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Form Layout */
+  .place-order-left {
     display: grid;
-    grid-template-columns:0.5fr 2fr 1fr 1fr 2fr 1fr ;
+    gap: 1.8rem;
+  }
+  
+  .info {
+    text-align: center;
+    color: #e93e0a;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .info::before,
+  .info::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 1px;
+    background: #dfe6e9;
+  }
+  
+  .info::before { left: 0; }
+  .info::after { right: 0; }
+  
+  /* Input Fields */
+  .multi-fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.9);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #a6becf;
+    background: white;
+    box-shadow: 0 4px 12px rgba(9, 132, 227, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  input::placeholder {
+    color: #adb5bd;
+    opacity: 1;
+  }
+  
+  /* Submit Button */
+  .least-button {
+    display: inline-flex;
     align-items: center;
-    gap: 30px;
-    font-size: 14px;
-    padding: 10px 20px;
-    color: beige;
-    border: 1px solid purple;
-}
-.myorders-order{
-    width: 50px;
-}
+    justify-content: center;
+    padding: 1.2rem 2.8rem;
+    background: linear-gradient(135deg, #0984e3 0%, #6c5ce7 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .least-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transition: 0.5s;
+  }
+  
+  .least-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(15, 15, 15, 0.3);
+  }
+  
+  .least-button:hover::before {
+    left: 100%;
+  }
+  
+  .least-button:active {
+    transform: translateY(0);
+  }
+  
+  .least-button::after {
+    content: '➡';
+    margin-left: 0.8rem;
+    transition: margin 0.3s ease;
+  }
+  
+  .least-button:hover::after {
+    margin-left: 1.2rem;
+  }
+  
+  /* Status Messages */
+  .status-message {
+    padding: 1.2rem;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    animation: slideIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    backdrop-filter: blur(4px);
+  }
+  
+  .status-message[data-success="true"] {
+    background: rgba(214, 255, 222, 0.9);
+    border: 2px solid #00b894;
+    color: #005a42;
+  }
+  
+  .status-message[data-success="false"] {
+    background: rgba(255, 214, 214, 0.9);
+    border: 2px solid #ff7675;
+    color: #8b0000;
+  }
+  
+  /* Animations */
+  @keyframes paymentPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.01); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .place-order {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+    
+    .title {
+      font-size: 1.8rem;
+    }
+    
+    .multi-fields {
+      grid-template-columns: 1fr;
+    }
+    
+    .cart-total-modif h1 {
+      font-size: 1.2rem;
+    }
+    
+    input {
+      padding: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title::after {
+      width: 80px;
+    }
+    
+    .least-button {
+      padding: 1rem 1.5rem;
+    }
+  }

@@ -29,11 +29,12 @@ Yaada ykn yaada yoo qabaattan karaa adda addaatiin wal qunnamsiisuu dandeessu
 
 </p>
 <div className="footer-social-icon">
-   <a href="https://facebok.com"><img src={assets.facebook_icon} alt="" /></a> 
+<a href="https://facebok.com"><img src={assets.facebook_icon} alt="" /></a> 
    <a href="https://twitter.com"><img src={assets.twitter_icon} alt="" /></a> 
   <a href="https://linkedin.com"><img src={assets.linkedin_icon} alt="" /></a>  
-  <a href="https://github.com/sabonawebsite-com/code-web"><span className='Github'> GitHub</span></a>
-  <a href="https://www.youtube.com/results?search_query=sabona+marara"><span className='YouTube'> YouTube</span></a>
+  <a href="https://github.com/sabonawebsite-com/code-web"><img className='github' src={assets.github} alt="" /></a>
+  <a href="https://www.youtube.com/results?search_query=sabona+marara"><img className='youtube' src={assets.youtube} alt="" /></a>
+  <a href="https://www.reddit.com/?rdt=50289"><img className='reddit' src={assets.reddit} alt="" /></a>
 </div>
 </div>
 <div className="footer-content-center">

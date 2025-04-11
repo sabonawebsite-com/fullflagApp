@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';  
 import emailjs from '@emailjs/browser';  
 
-export const ContactUs = () => {  
+export const Myorder = () => {  
   const form = useRef();  
   const [statusMessage, setStatusMessage] = useState(''); // State for success/error message  
 
@@ -35,7 +35,7 @@ export const ContactUs = () => {
           <input required name='state' type="text" placeholder='State' />  
         </div>  
         <div className="multi-fields">  
-          <input required name='zipCode' type="text" placeholder='Zip Code' />  
+          <input required name='zipCode' type="text" placeholder='FAN' />  
           <input required name='country' type="text" placeholder='Country' />  
         </div>  
         <input required name='phone' type="tel" placeholder='Phone' />  
@@ -51,4 +51,4 @@ export const ContactUs = () => {
   );  
 };  
 
-export default ContactUs;  
+export default Myorder;  

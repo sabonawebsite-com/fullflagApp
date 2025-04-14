@@ -59,6 +59,20 @@ cursor: pointer;
 .cart-promocode p{
     color: #555;
 }
+.delevery-option{
+    display: flex;
+    gap: 20px;
+    border: #555;
+    border: 1px solid green;
+    padding: 10px 20px;
+    border-radius: 30px;
+    align-items: center;
+}
+.button3 button{
+    background-color: green;
+    color: white;
+    border-radius: 40px;
+}
 .cart-promo-code-input{
     margin-top: 10px;
     display: flex;

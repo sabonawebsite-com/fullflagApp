@@ -13,14 +13,14 @@ const addToCart=async(itemId)=>{
         setCartItem((prev)=>({...prev,[itemId]:1}))
     }
     else{
-        setCartItem((prev)=>({...prev,[itemId]:prev[itemId]+1}))  
+        setCartItem((prev)=>({...prev,[itemId]:prev[itemId]=1}))  
     }
     if (token) {
         await axios.post(url+"/api/cart/add",{itemId},{headers:{token}})
     }
 }
 const removeFromcart= async (itemId)=>{
-    setCartItem((prev)=>({...prev,[itemId]:prev[itemId]-1})) 
+    setCartItem((prev)=>({...prev,[itemId]:prev[itemId]=0})) 
     if (token) {
         await axios.post(url+"/api/cart/remove",{itemId},{headers:{token}})
     }

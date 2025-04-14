@@ -55,9 +55,13 @@ const Cart = () => {
         </div>
         </div>
         {/* <button onClick={()=>navigate("/payment")}>CHECKOUT TO PAYMENT</button> */}
-        <button onClick={()=>navigate("/distro")} className='button11'>Main Distribution</button>
-        <button  className='button11'><a href="https://www.ethiotelecom.et/telebirr/telebirr-registration/">go to Telbirr</a></button>
-        <button onClick={()=>navigate('/myorders')}>fill form</button>
+        <div className='delevery-option'>
+
+       
+        <button onClick={()=>navigate("/distro")} className='button1'>Main Distribution</button>
+        <button  className='button2'><a href="https://www.ethiotelecom.et/telebirr/telebirr-registration/">go to Telbirr</a></button>
+        <button className='button3' onClick={()=>navigate('/myorders')}>fill form</button>
+        </div>
         </div>
         <div className="cart-promocode">
         <div>

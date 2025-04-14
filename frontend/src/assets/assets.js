@@ -119,19 +119,19 @@ export const menu_list = [
         menu_image: menu_5
     },
     {
-        menu_name: "Hens",
+        menu_name: "Sheep",
         menu_image: menu_6
     },
     {
-        menu_name: "Donkeys",
+        menu_name: "Donkey",
         menu_image: menu_7
     },
     {
-        menu_name: "Porducts",
+        menu_name: "Porduct",
         menu_image: menu_8,
     },
     {
-        menu_name: "Foods",
+        menu_name: "Food",
         menu_image: menu_9
     }
    ]

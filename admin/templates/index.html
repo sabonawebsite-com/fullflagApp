@@ -1,0 +1,122 @@
+<style>
+    /* General styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+.registrants{
+    text-decoration: none;
+    color: #eb10c6;
+    font-weight: 500;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Form styling */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+/* Input fields */
+input[type="text"],
+select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    flex-grow: 1;
+    min-width: 200px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+input[type="text"]::placeholder {
+    color: #95a5a6;
+}
+
+/* Select dropdown */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1em;
+    padding-right: 30px;
+}
+
+/* Button styling */
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    flex-shrink: 0;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    input[type="text"],
+    select,
+    button {
+        width: 100%;
+        min-width: auto;
+    }
+}
+</style>
+{% extends "layout.html" %}
+
+{% block body %}
+<h1>Employees</h1>
+<form action="/register" method="post">
+    <input type="text" autocomplete="off" autofocus placeholder="Record Employee" name="name">
+    <select name="employee" id="">
+        <option disabled selected value="">Role</option>
+        <option value="delivery">Delivery</option>
+        <option value="Driver">Driver</option>
+        <option value="Email">Email Reader</option>
+        <option value="Manager">Manager</option>
+    </select>
+    <button type="submit">Register</button>
+</form>
+<a class="registrants" href="http://127.0.0.1:5000/registrants">See Registered Employees</a>
+{% endblock %}

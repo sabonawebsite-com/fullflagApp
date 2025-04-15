@@ -80,12 +80,11 @@ const Add = ({url}) => {
                         <option value="Goat">Goat</option>
                         <option value="Camel">Camel</option>
                         <option value="Hen">Hens</option>
-                        <option value="Donke">Donkes</option>
-                        <option value="Product">Products</option>
-                        <option value="Food">Foods</option>
+                        <option value="Donkeys">Donkes</option>
+                        <option value="Mana">Products</option>
+                        <option value="Foods">Foods</option>
                         
-                        {/* <option value="Mana">Mana</option>
-                        <option value="Elektroniksii">Elektroniksii</option> */}
+                        
                     </select>
                 </div>
                 <div className="add-price flex-col">

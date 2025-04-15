@@ -12,6 +12,7 @@ import menu_6 from './goat_menu.png'
 import menu_7 from './donkey_menu.png'
 import menu_8 from './sa_1.png'
 import menu_9 from './icon_group_1.png'
+import menu_10 from './menu_10.png'
 import product_1 from './food_2.png'
 import product_2 from './food_2.png'
 import product_3 from './food_3.png'
@@ -123,17 +124,18 @@ export const menu_list = [
         menu_image: menu_6
     },
     {
-        menu_name: "Donkey",
+        menu_name: "Donkeys",
         menu_image: menu_7
     },
     {
-        menu_name: "Porduct",
-        menu_image: menu_8,
+        menu_name: "Products",
+        menu_image: menu_10
     },
     {
-        menu_name: "Food",
+        menu_name: "Foods",
         menu_image: menu_9
     }
+   
    ]
 
 export const LiveStock_list = [

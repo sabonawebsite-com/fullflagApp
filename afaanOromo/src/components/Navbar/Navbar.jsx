@@ -34,7 +34,7 @@ const userDataHandeler=()=>{
       <Link to='/'>  
         <img src={assets.group1} alt="" className='logo' />  
       </Link>  
-      <a className='afaan-oromo' href="http://localhost:5174/">Afaan Oromoo</a>
+      <a className='afaan-oromo' href="http://localhost:5173/">English</a>
       <ul className="navbar-menu">  
         <Link to='/' className={menu==="home" ? "active" : ""} onClick={() => setMenu("home")}>bafata</Link>  
         <a href='#explore-menu' className={menu==="menu" ? "active" : ""} onClick={() => setMenu("menu")}>Omishaalee</a>  

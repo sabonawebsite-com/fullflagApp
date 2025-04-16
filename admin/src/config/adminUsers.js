@@ -1,4 +1,4 @@
-// src/config/adminUsers.js
+
 const adminUsers = [
     {
       username: 'sabona marara',

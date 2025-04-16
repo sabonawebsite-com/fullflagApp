@@ -19,13 +19,12 @@ const App = () => {
     password: ''
   });
   
-  // Declared admin users
+
 
   const handleLogin = (e) => {
     e.preventDefault();
     const { username, password } = loginForm;
-    
-    // Check if credentials match any admin user
+
     const isValidUser = adminUsers.some(
       user => user.username === username && user.password === password
     );
@@ -36,7 +35,7 @@ const App = () => {
       toast.success('Login successful!');
     } else {
       toast.error('Invalid username or password');
-      // Clear the password field for security
+
       setLoginForm(prev => ({ ...prev, password: '' }));
     }
   };
@@ -49,7 +48,6 @@ const App = () => {
     }));
   };
 
-  // If not logged in, show login popup and don't render protected content
   if (!isLoggedIn) {
     return (
       <div className="app">
@@ -92,7 +90,6 @@ const App = () => {
     );
   }
 
-  // If logged in, show the normal app
   return (
     <div>
       <ToastContainer />

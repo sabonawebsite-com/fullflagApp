@@ -1,7 +1,9 @@
 import React, { useRef, useState } from 'react';  
 import emailjs from '@emailjs/browser';  
+import{useNavigate} from 'react-router-dom'
 
 export const Myorder = () => {  
+  const navigate=useNavigate()
   const form = useRef();  
   const [statusMessage, setStatusMessage] = useState(''); // State for success/error message  
 
@@ -21,6 +23,7 @@ export const Myorder = () => {
   };  
 
   return (  
+    <div>
     <form ref={form} className='place-order' onSubmit={sendEmail}>  
       <div className="place-order-left">  
         <p className="title">Delivery Information</p>  
@@ -47,7 +50,10 @@ export const Myorder = () => {
       </div>  
 
       {statusMessage && <p className="status-message">{statusMessage}</p>} {/* Display status message */}  
-    </form>  
+    </form> 
+    <button className='button3' onClick={()=>navigate('/pay')}>Pay Now</button>
+    </div>
+    
   );  
 };  
 

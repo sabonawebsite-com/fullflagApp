@@ -7,6 +7,7 @@ const Footer = () => {
   const[about,setAbout]=useState("")
   const[delevery,setDelevery]=useState("")
   const[privacy,setPrivacy]=useState("")
+  const office="🧑🏻"
   const displayAbout=()=>{
     setAbout(about)
   }
@@ -18,15 +19,16 @@ const Footer = () => {
   }
   return (
     <div className='footer'id='footer'>
+      <h1>🌐LiveStock Delevery Campany✅</h1>
       <img className='logos' src={assets.group1} alt="" />
       <div className="footer-content">
 <div className="footer-content-left">
-
-<img src={assets.logo} className='nameLogo' alt="" />
+<h1>{office}</h1>
+<img src={assets.creator} className='nameLogo' alt="" />
 <p>
   If you have any idea or comment you can connect in different way
   here you can use social media , cell phone or email
-  thanks for using our product!!
+  thanks for using our product!!👇
 
 </p>
 
@@ -39,29 +41,30 @@ const Footer = () => {
   <a href="https://www.youtube.com/results?search_query=sabona+marara"><img className='youtube' src={assets.youtube} alt="" /></a>
   <a href="https://www.reddit.com/?rdt=50289"><img className='reddit' src={assets.reddit} alt="" /></a>
 </div>
+
 </div>
 <div className="footer-content-center">
-    <h1>Group5</h1>
+    <h1>Group5:</h1>
     <ul>
-   <a href="/"><li>Home</li></a> 
-   <Link to="/about"> <li >About us</li></Link>
-    <li  onClick={deleveryHandeler}>delevery</li>
+   <a href="/"><li>🏠Home</li></a> 
+   <Link to="/about"> <li >ℹ️About us</li></Link>
+    <li  onClick={deleveryHandeler}>🚇delevery</li>
     <li >{delevery}</li>
-    <li onClick={privacyHandeler}>privacy policy</li>
+    <li onClick={privacyHandeler}>🔐privacy policy</li>
     <li>{privacy}</li>
     </ul>
 </div>
 <div className="footer-content-right">
-    <h2>Get In Touch</h2>
-   <li>+125928629040</li>
-   <li>0928860911</li>
-   <li>group5@gmail.com</li>
+    <h2>📳Get In Touch</h2>
+   <li>📞+125928629040</li>
+   <li>☎️0911886067</li>
+   <li>📩group5@gmail.com</li>
 </div>
-<a href='/'><button >Back</button></a>
+<a href='/'><button >🔙Back</button></a>
 <hr />
       </div>
       <p className="footer-copyright">
-        {new Date().getFullYear()}&copy;Group5 All Right Resived </p>
+        {new Date().getFullYear()}©️Group5 All Right Resived </p>
  
     </div>
   )

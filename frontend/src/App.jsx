@@ -15,6 +15,7 @@ import Contact from './components/Contact/Contact'
 import MainDistro from './pages/MainDistro/MainDistro'
 import ChapaPayment from './pages/ChapaPayment/ChapaPayment'
 import Myorder from './pages/Myorder/Myorder'
+import PayOption from './pages/PayOption/PayOption'
 // import Searchle from './components/Searchble/Searchle'
 const App = () => {
   const[showlogin,setShowlogin]=useState(false)
@@ -34,6 +35,7 @@ const App = () => {
         <Route path='/payment' element={<ChapaPayment/>}/>
       <Route path='myorders'element={<Myorder/>}/>
         <Route path='/distro' element={<MainDistro/>}/>
+        <Route path='/pay' element={<PayOption/>}/>
       </Routes>
     </div>
     <Contact/>

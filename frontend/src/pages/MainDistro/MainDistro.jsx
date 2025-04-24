@@ -2,13 +2,15 @@ import React from 'react'
 import './MainDistro.css'
 
 import {distro} from '../../distro/distro'
+import{useNavigate} from 'react-router-dom'
+ 
 
 const MainDistro = () => {
-  
+  const navigate=useNavigate()
 
   return (
     <>
-    <h1 id='main-text'>Main distribution / Giduugala Raabsaa</h1>
+    <h1 id='main-text'>Main distribution</h1>
     <div className='main-distro'>
       
        {distro.map((item,index)=>{
@@ -21,14 +23,14 @@ const MainDistro = () => {
     <p className='code'>Code: {item.Code}</p>
     <p>days:{item.days}</p>
     </div>
-
+  
 
 </div>
 
         )
             
        })}
-      
+        <button className='button3' onClick={()=>navigate('/myorders')}>fill form</button>
     </div>
     </>
   )

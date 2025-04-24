@@ -56,7 +56,9 @@ import user_prot from './user_port.png'
 import youtube from './youtube.png'
 import github from './github.png'
 import reddit from './reddit.png'
+import creator from './creator.gif'
 export const assets = {
+    creator,
     youtube,
     github,
     reddit,

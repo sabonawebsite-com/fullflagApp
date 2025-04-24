@@ -12,6 +12,7 @@ import menu_6 from './goat_menu.png'
 import menu_7 from './donkey_menu.png'
 import menu_8 from './sa_1.png'
 import menu_9 from './icon_group_1.png'
+
 import product_1 from './food_2.png'
 import product_2 from './food_2.png'
 import product_3 from './food_3.png'
@@ -55,7 +56,9 @@ import user_prot from './user_port.png'
 import youtube from './youtube.png'
 import github from './github.png'
 import reddit from './reddit.png'
+import creator from './creator.gif'
 export const assets = {
+    creator,
     youtube,
     github,
     reddit,

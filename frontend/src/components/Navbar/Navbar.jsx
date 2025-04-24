@@ -32,33 +32,33 @@ const userDataHandeler=()=>{
   return (  
     <div className='navbar'>  
       <Link to='/'>  
-        <img src={assets.group1} alt="" className='logo' />  
+        <img title='logo' src={assets.group1} alt="" className='logo' />  
       </Link>  
-      <a className='afaan-oromo' href="http://localhost:5174/">Afaan Oromoo</a>
+      <a title='Gara Afaan oromotti jijiruuf' className='afaan-oromo' href="http://localhost:5174/">Afaan Oromoo</a>
       <ul className="navbar-menu">  
-        <Link to='/' className={menu==="home" ? "active" : ""} onClick={() => setMenu("home")}>home</Link>  
-        <a href='#explore-menu' className={menu==="menu" ? "active" : ""} onClick={() => setMenu("menu")}>Product-List</a>  
-        <a href='#footer' className={menu==="contact-us" ? "active" : ""} onClick={() => setMenu("contact-us")}>contact-us</a>  
-        <a href='#contact' className={menu==="Add-info" ? "active" : ""} onClick={() => setMenu("Add-info")}>Add-info</a>  
+        <Link title='home' to='/' className={menu==="home" ? "active" : ""} onClick={() => setMenu("home")}>home</Link>  
+        <a title='product list ' href='#explore-menu' className={menu==="menu" ? "active" : ""} onClick={() => setMenu("menu")}>Product-List</a>  
+        <a title='contact us ' href='#footer' className={menu==="contact-us" ? "active" : ""} onClick={() => setMenu("contact-us")}>contact-us</a>  
+        <a title='for more information ' href='#contact' className={menu==="Add-info" ? "active" : ""} onClick={() => setMenu("Add-info")}>Add-info</a>  
       </ul>  
-      <a href="https://sabonawebsite-com.github.io/hotel-caffe/" className='advertise'><img src={assets.generate1} alt="m"/></a>
+      <a title='advertiments' href="https://sabonawebsite-com.github.io/hotel-caffe/" className='advertise'><img src={assets.generate1} alt="m"/></a>
       {comm_spo && <Comm_spo/>}
       <a href='http://127.0.0.1:5000/'>
-      <img className='user' src={assets.user1} alt="" />
+      <img title='Upload your product' className='user' src={assets.user1} alt="" />
       </a>
       {useState && <userData/>}
       <div className="navbar-right">  
        
-        <img onClick={toggleSearch} className='search-icon1' src={assets.search_icon} alt="" />  
+        <img title='search product' onClick={toggleSearch} className='search-icon1' src={assets.search_icon} alt="" />  
         
         {showSearch && <Searchle />}  
         
         <div className="navbar-search-icon">  
-            <Link to='/cart'><img src={assets.car_liveStock} alt="" /></Link>  
+            <Link title='check your cart' to='/cart'><img src={assets.car_liveStock} alt="" /></Link>  
             <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>  
         </div>  
         {!token ? (  
-          <button onClick={() => setShowlogin(true)} className='sigin-in'>sign in</button>  
+          <button title='sign in to our web app' onClick={() => setShowlogin(true)} className='sigin-in'>sign in</button>  
         ) : (  
           <div className='navbar-profile'>  
             <img src={assets.profile_icon} alt="" />  

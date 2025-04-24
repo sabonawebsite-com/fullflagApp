@@ -4,7 +4,7 @@ import { menu_list } from '../../assets/assets'
 const ExploreMenu = ({ category, setCategory }) => {
   return (
     <div className='explore-menu' id="explore-menu">
-      <h1 id="page-title">Omisha keenya Gabaa irraa Qabnu</h1>
+      <h1 id="page-title">Omisha Gabaa irraa Qabnu</h1>
       <p>Sirni kenniinsa Omishaa bu’uuraan maamiltoota oomishni keenya balbala isaaniitti akka dhiyaatu barbaadan waliin kan walqunnamsiisu networkii dha. Akkaataa idileetti qaamolee gurguddoo sadii of keessaa qaba:</p>
       <div className='explore-menu-list'>
         {menu_list.map((item, index) => {
@@ -17,6 +17,7 @@ const ExploreMenu = ({ category, setCategory }) => {
         })}
         <hr />
       </div>
+      <hr />
     </div>
   )
 }

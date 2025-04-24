@@ -50,10 +50,11 @@
     color: white; 
 }
 .footer-content-left .nameLogo{
-    width: 100px;
+    width: 150px;
+    height: 150px;
     cursor: pointer;
-    border-radius: 40px;
-    border: 8px solid purple;
+    border-radius: 50%;
+    border: 2px solid purple;
     margin-top: 0px;
     margin-bottom: 0px;   
 }

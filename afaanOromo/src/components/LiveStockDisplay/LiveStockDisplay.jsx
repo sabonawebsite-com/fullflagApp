@@ -1,47 +1,63 @@
-import React, { useContext } from 'react';  
+import React, { useContext, useState } from 'react';  
 import './LiveStockDisplay.css';  
 import { StoreContext } from '../../context/StoreContext';   
 import LiveStockItem from '../LiveStockItem/LiveStockItem';   
-import { assets } from '../../assets/assets';
+import { assets } from '../../assets/assets';  
 
 const LiveStockDisplay = ({ category }) => {  
   const { LiveStock_list, loading, error } = useContext(StoreContext);  
+  const [searchTerm, setSearchTerm] = useState(""); 
 
-  // Loading state handling  
   if (loading) {  
     return <p>Daataa LiveStock fe'aa jira...</p>;   
   }  
 
-  // Error handling  
+
   if (error) {  
-    return <p>Dogoggora deetaa LiveStock fe'uu: {error.message}</p>;  
+    return <p>Dogoggora deetaa LiveStock fe'uu:{error.message}</p>;  
   }  
 
-  // Filter LiveStock list by category  
+   
   const filteredLiveStockList = category === "All"   
     ? LiveStock_list   
     : LiveStock_list.filter(item => item.category === category);  
 
-  // Handle case when no stocks are available  
-  if (!filteredLiveStockList.length) {  
-    return(
-      <div className="noproduct">
-        
-         <p>Dhifaama gosa kanan omishaa gabaa irraa hin qabnuu.</p>
-         <img src={assets.notfound} alt="No live LiveStock" />
-      </div>
-    )  
+
+  const searchedLiveStockList = filteredLiveStockList.filter(item =>   
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())  
+  );  
+
+ 
+  if (!searchedLiveStockList.length) {  
+    return(  
+      <div className="noproduct">  
+         <p>Dhifaama gosa kanan omishaa gabaa irraa hin qabnuu.</p>  
+         <p></p>  
+         {/* <img src={assets.notfound} alt="No live LiveStock" />   */}
+      </div>  
+    );  
   }  
 
   return (  
     <div className='LiveStock-display' id='LiveStock-display'>  
-      <h1>
-      Oomisha Keenya Gabaa Irratti Argamu
-      </h1>  
+      <h1 className='propogand'>  Oomisha Keenya Gabaa Irratti Argamu</h1>  
+        <div className="search-container">  
+        
+           
+              <input   
+                type="text"   
+                placeholder="search product you need ..."   
+                value={searchTerm}   
+                onChange={(e) => setSearchTerm(e.target.value)}   
+                className="search-input"  
+              />  
+                <img src={assets.search_icon} alt="Search" className="search-icon" /> 
+               
+            </div> 
       <div className="LiveStock-display-list">  
-        {filteredLiveStockList.map((item) => (  
+        {searchedLiveStockList.map((item) => (  
           <LiveStockItem  
-            key={item._id} // Use unique identifier as key  
+            key={item._id} 
             id={item._id}  
             name={item.name}  
             description={item.description}  
@@ -54,4 +70,4 @@ const LiveStockDisplay = ({ category }) => {
   );  
 };  
 
-export default LiveStockDisplay;
+export default LiveStockDisplay;  

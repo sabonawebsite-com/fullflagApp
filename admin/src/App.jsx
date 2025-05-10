@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './LoginPopup.css';
 import adminUsers from './config/adminUsers';
+import { assets } from './assets/assets';
 
 const App = () => {
   const url = "http://localhost:4000";
@@ -54,6 +55,7 @@ const App = () => {
         {showLoginPopup && (
           <div className="login-popup-overlay">
             <div className="login-popup">
+              <img className='admin_logo' src={assets.creator}alt="" />
               <h2>Admin Login</h2>
               <form onSubmit={handleLogin}>
                 <div className="form-group">

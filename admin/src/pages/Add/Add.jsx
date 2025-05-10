@@ -41,12 +41,12 @@ const Add = ({url}) => {
         setImage(false);
         toast.success(response.data.message);
       } else {
-        // Handle errors from the server
-        toast.error(response.data.message || 'An error occurred'); // Display generic error if no message provided
+     
+        toast.error(response.data.message || 'An error occurred'); 
       }
     } catch (error) {
       console.error('Error submitting data:', error);
-      toast.error('An error occurred while submitting data'); // Display generic error message
+      toast.error('An error occurred while submitting data');
     }
   };
 

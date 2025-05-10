@@ -9,6 +9,14 @@ body{
     min-height: 100vh;
     background-color: #fcfcfc;
 }
+.admin_logo{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+
+    align-items: center;
+    border-radius: 50%;
+}
 a{
     color: inherit;
     outline: none;

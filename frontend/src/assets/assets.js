@@ -10,9 +10,9 @@ import menu_4 from './hens_menu.png'
 import menu_5 from './goat_menu.png'
 import menu_6 from './goat_menu.png'
 import menu_7 from './donkey_menu.png'
-import menu_8 from './sa_1.png'
+import menu_8 from './icon_group.png'
 import menu_9 from './icon_group_1.png'
-import menu_10 from './menu_10.png'
+
 import product_1 from './food_2.png'
 import product_2 from './food_2.png'
 import product_3 from './food_3.png'
@@ -21,7 +21,7 @@ import product_5 from './food_5.png'
 import product_6 from './food_6.png'
 import product_7 from './food_7.png'
 import product_8 from './food_8.png'
-import product_9 from './food_9.png'
+
 
 
 import group1 from './icon_group_1.png'
@@ -131,7 +131,7 @@ export const menu_list = [
     },
     {
         menu_name: "Products",
-        menu_image: menu_10
+        menu_image: menu_8
     },
     {
         menu_name: "Foods",

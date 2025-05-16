@@ -6,8 +6,11 @@ import upload_area from './upload_area.png'
 import parcel_icon from './parcel_icon.png'
 import creator from './creator.gif'
 import icon_group from './icon_group_1.png'
+import upload_life from './upload_life.png'
+
 
 export const assets ={
+    upload_life,
     logo,
     icon_group,
     creator,

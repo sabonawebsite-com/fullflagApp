@@ -7,6 +7,18 @@ const adminUsers = [
     {
       username: 'etafaa tarikuu',
       password: '123doe'
+    },
+     {
+      username: 'Gadisa',
+      password: '123gadisa'
+    },
+     {
+      username: 'Mubarak',
+      password: '123muba'
+    },
+     {
+      username: 'Abduba',
+      password: 'abdu123'
     }
   ];
   

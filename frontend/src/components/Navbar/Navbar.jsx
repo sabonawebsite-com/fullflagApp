@@ -41,7 +41,7 @@ const userDataHandeler=()=>{
         <a title='contact us ' href='#footer' className={menu==="contact-us" ? "active" : ""} onClick={() => setMenu("contact-us")}>contact-us</a>  
         <a title='for more information ' href='#contact' className={menu==="Add-info" ? "active" : ""} onClick={() => setMenu("Add-info")}>Add-info</a>  
       </ul>  
-      <a title='advertiments' href="https://sabonawebsite-com.github.io/exithome/" className='advertise'><img src={assets.generate1} alt="m"/></a>
+      <a title='advertiments' href="https://sabonawebsite-com.github.io/exithome/" className='advertise'><img src={assets.advert} alt="m"/></a>
       {comm_spo && <Comm_spo/>}
       <a href='http://127.0.0.1:5000/'>
       <img title='Upload your product' className='user' src={assets.user1} alt="" />

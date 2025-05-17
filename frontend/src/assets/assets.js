@@ -4,14 +4,14 @@ import postoral from './postoral.png'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 import menu_1 from './ox_menu.png'
-import menu_2 from './sheep_menu.png'
+import menu_2 from './cow_me.png'
 import menu_3 from './camel_menu.png'
 import menu_4 from './hens_menu.png'
-import menu_5 from './goat_menu.png'
-import menu_6 from './goat_menu.png'
+import menu_5 from './goat_me.png'
+import menu_6 from './sheep_menu.png'
 import menu_7 from './donkey_menu.png'
-import menu_8 from './icon_group.png'
-import menu_9 from './icon_group_1.png'
+import menu_8 from './home.gif'
+import menu_9 from './pro6.png'
 
 import product_1 from './food_2.png'
 import product_2 from './food_2.png'
@@ -57,7 +57,9 @@ import youtube from './youtube.png'
 import github from './github.png'
 import reddit from './reddit.png'
 import creator from './creator.gif'
+import advert from './advert.gif'
 export const assets = {
+    advert,
     creator,
     youtube,
     github,

@@ -11,7 +11,7 @@ import menu_5 from './goat_me.png'
 import menu_6 from './sheep_menu.png'
 import menu_7 from './donkey_menu.png'
 import menu_8 from './home.gif'
-import menu_9 from './pro6.png'
+import menu_9 from './food.gif'
 
 import product_1 from './food_2.png'
 import product_2 from './food_2.png'

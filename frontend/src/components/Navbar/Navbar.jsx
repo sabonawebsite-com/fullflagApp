@@ -1,28 +1,45 @@
-import React, { useContext, useState } from 'react';  
+import React, { useContext, useState, useEffect } from 'react';  
 import { assets } from '../../assets/assets';  
 import './Navbar.css';  
 import { Link, useNavigate } from 'react-router-dom';  
 import { StoreContext } from '../../context/StoreContext';  
 import Searchle from '../Searchble/Searchle';  
 import Comm_spo from '../Comm_spo/Comm_spo';
+import PopupAd from '../PopupAd/PopupAd'; // Add this import
 
 const Navbar = ({ setShowlogin }) => {  
   const [showSearch, setShowSearch] = useState(false);
-  const[comm_spo,setComm_spo] =useState(false)
-  const [userData,setUserData]=useState(false)
+  const [comm_spo, setComm_spo] = useState(false);
+  const [userData, setUserData] = useState(false);
   const [menu, setMenu] = useState("home");  
+  const [showAd, setShowAd] = useState(true); // Add this state
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);  
   const navigate = useNavigate();  
 
+  // Show popup ad after 5 seconds (only once per session)
+  useEffect(() => {
+    const hasSeenAd = sessionStorage.getItem('hasSeenAd');
+    if (!hasSeenAd) {
+      const timer = setTimeout(() => {
+        setShowAd(true);
+        sessionStorage.setItem('hasSeenAd', 'true');
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   const toggleSearch = () => {  
     setShowSearch(!showSearch);  
-  };  
-const comm_advert=()=>{
-setComm_spo(!comm_spo)
-}
-const userDataHandeler=()=>{
-  setUserData(!userData)
-}
+  };
+
+  const comm_advert = () => {
+    setComm_spo(!comm_spo);
+  };
+
+  const userDataHandeler = () => {
+    setUserData(!userData);
+  };
+
   const logout = () => {  
     localStorage.removeItem("token");  
     setToken("");    
@@ -30,7 +47,10 @@ const userDataHandeler=()=>{
   };  
 
   return (  
-    <div className='navbar'>  
+    <div className='navbar'>
+      {/* Popup Ad */}
+      {showAd && <PopupAd onClose={() => setShowAd(false)} />}
+      
       <Link to='/'>  
         <img title='logo' src={assets.group1} alt="" className='logo' />  
       </Link>  
@@ -44,18 +64,15 @@ const userDataHandeler=()=>{
       <a title='advertiments' href="https://sabonawebsite-com.github.io/exithome/" className='advertise'><img src={assets.advert} alt="m"/></a>
       {comm_spo && <Comm_spo/>}
       <a href='http://127.0.0.1:5000/'>
-      <img title='Upload your product' className='user' src={assets.user1} alt="" />
+        <img title='Upload your product' className='user' src={assets.user1} alt="" />
       </a>
       {useState && <userData/>}
       <div className="navbar-right">  
-       
         <img title='search product' onClick={toggleSearch} className='search-icon1' src={assets.search_icon} alt="" />  
-        
         {showSearch && <Searchle />}  
-        
         <div className="navbar-search-icon">  
-            <Link title='check your cart' to='/cart'><img src={assets.car_liveStock} alt="" /></Link>  
-            <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>  
+          <Link title='check your cart' to='/cart'><img src={assets.car_liveStock} alt="" /></Link>  
+          <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>  
         </div>  
         {!token ? (  
           <button title='sign in to our web app' onClick={() => setShowlogin(true)} className='sigin-in'>sign in</button>  
@@ -63,8 +80,6 @@ const userDataHandeler=()=>{
           <div className='navbar-profile'>  
             <img src={assets.profile_icon} alt="" />  
             <ul className='navbar-profile-dropdown'>
-                
-              {/* <li onClick={() => navigate("/myorders")}><img src={assets.basket_icon} alt="" /><p>Order</p></li>   */}
               <hr />  
               <li onClick={logout}><img src={assets.logout_icon} alt="" /><p>Logout</p></li>  
             </ul>  

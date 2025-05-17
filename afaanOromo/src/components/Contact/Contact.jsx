@@ -45,7 +45,7 @@ const Contact = () => {
       </div>
       <div className='contact-col'>
         <form onSubmit={onSubmit}>
-          <h2>Waa'ee App Yaada Yoo Qabdan</h2>
+          <h2>Waa'ee Appii kanaa Yaada Yoo Qabaatan</h2>
      
           <label > 
           Maqaa Keessan Galchaa👇🏻</label>

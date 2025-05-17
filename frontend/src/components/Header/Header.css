@@ -82,6 +82,10 @@
     
     }
     @media(max-width:1050px){
+          .propo{
+        margin-left: 600px;
+        
+    }
      
         .header-contents{
             max-width: 45%;
@@ -90,6 +94,7 @@
             color: white;
             font-size: 1.3vw;
         }
+    
         .navbar-right input{
             margin-right: 0px;
             width: 100px;
@@ -102,7 +107,7 @@
     }
     }
     @media(max-width:750px){
-       
+ 
         .header-contents h2{
             font-size: 20px;
             max-width: 65%;
@@ -113,6 +118,7 @@
            font-size: 12px;
            font-weight: 300;
         }
+       
     .header-contents p{
         display: none;
        font-size: 12px;

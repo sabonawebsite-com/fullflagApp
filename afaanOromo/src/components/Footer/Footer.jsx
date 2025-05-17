@@ -48,9 +48,9 @@ Yaada ykn yaada yoo qabaattan karaa adda addaatiin wal qunnamsiisuu dandeessu
     <ul>
    <a href="/"><li>🏠bafata</li></a> 
    <Link to="/about"> <li >ℹ️waa'ee keenya</li></Link>
-    <li  onClick={deleveryHandeler}>🚇delevery</li>
+    <li  onClick={deleveryHandeler}>🚇qaqqabsiisuu</li>
     <li >{delevery}</li>
-    <li onClick={privacyHandeler}>🔐privacy policy</li>
+    <li onClick={privacyHandeler}>🔐imaammata dhuunfaa</li>
     <li>{privacy}</li>
     </ul>
 </div>

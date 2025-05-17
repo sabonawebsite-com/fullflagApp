@@ -1,60 +1,79 @@
 import React, { useRef, useState } from 'react';  
 import emailjs from '@emailjs/browser';  
-import{useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 export const Myorder = () => {  
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const form = useRef();  
-  const [statusMessage, setStatusMessage] = useState(''); // State for success/error message  
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const sendEmail = (e) => {  
+  const sendEmail = async (e) => {  
     e.preventDefault();  
+    setIsLoading(true);
+    setStatusMessage('');
 
-    emailjs  
-      .sendForm('service_uwt63pq', 'template_k28tc5v', form.current, 'wzcCXP_JvhWr3Sgqk')  
-      .then(  
-        () => {  
-          setStatusMessage('Email sent successfully!'); // Set success message  
-        },  
-        (error) => {  
-          setStatusMessage('Failed to send email: ' + error.text); // Set error message  
-        }  
-      );  
+    try {
+      const result = await emailjs.sendForm(
+        'service_9fppvat', 
+        'template_0zj5qg8', 
+        form.current, 
+        '20qWbrkh59HP-CEKF'
+      );
+      setStatusMessage('Sent successfully!');
+      form.current.reset();
+    } catch (error) {
+      console.error('Email send error:', error);
+      setStatusMessage(`Failed to send email: ${error.text || 'Please try again later'}`);
+    } finally {
+      setIsLoading(false);
+    }
   };  
 
   return (  
     <div>
-    <form ref={form} className='place-order' onSubmit={sendEmail}>  
-      <div className="place-order-left">  
-        <p className="title">Delivery Information</p>  
-        <div className="multi-fields">  
-          <input required name='firstName' type="text" placeholder='First Name' />  
-          <input required name='lastName' type="text" placeholder='Last Name' />  
+      <form ref={form} className='place-order' onSubmit={sendEmail}>  
+        <div className="place-order-left">  
+          <p className="title"> information</p>  
+          <div className="multi-fields">  
+            <input required name='firstName' type="text" placeholder='First Name' />  
+            <input required name='lastName' type="text" placeholder='Last Name' />  
+          </div>  
+          <input required name='email' type="email" placeholder='Your Email' />  
+          <input required name='code' type="text" placeholder='code ...' />  
+          <div className="multi-fields">  
+            <input required name='distro' type="text" placeholder='City' />  
+            <input required name='state' type="text" placeholder='State' />  
+          </div>  
+          <div className="multi-fields">  
+            <input required name='fan' type="text" placeholder='FAN' />  
+            <input required name='country' type="text" placeholder='Country' />  
+          </div>  
+          <input required name='phone' type="tel" placeholder='Phone' />  
+          <button 
+            type='submit' 
+            className='least-button' 
+            disabled={isLoading}
+          >
+            {isLoading ? 'Sending...' : 'send➡'}
+          </button>  
         </div>  
-        <input required name='email' type="email" placeholder='Your Email' />  
-        <input required name='street' type="text" placeholder='Street' />  
-        <div className="multi-fields">  
-          <input required name='city' type="text" placeholder='City' />  
-          <input required name='state' type="text" placeholder='State' />  
-        </div>  
-        <div className="multi-fields">  
-          <input required name='zipCode' type="text" placeholder='FAN' />  
-          <input required name='country' type="text" placeholder='Country' />  
-        </div>  
-        <input required name='phone' type="tel" placeholder='Phone' />  
-        <button type='submit' className='least-button'>SEND➡</button>  
-      </div>  
 
-      <div className="cart-total-modif">  
-        {/* Your cart total content  template_h0z7ysb */}  
-      </div>  
+        <div className="cart-total-modif">  
+          {/* Your cart total content */}  
+        </div>  
 
-      {statusMessage && <p className="status-message">{statusMessage}</p>} {/* Display status message */}  
-    </form> 
-    <button className='button3' onClick={()=>navigate('/pay')}>Pay Now</button>
+        {statusMessage && (
+          <p className={`status-message ${statusMessage.includes('Failed') ? 'error' : 'success'}`}>
+            {statusMessage}
+          </p>
+        )}
+      </form> 
+      <button className='button3' onClick={() => navigate('/pay')}>
+       Pay
+      </button>
     </div>
-    
   );  
 };  
 
-export default Myorder;  
+export default Myorder;

@@ -5,12 +5,6 @@ import muba from './muba.png'
 import abduba from './abduba.png'
 
 export const devabout = [
-      {
-        image: abduba,
-        name: "Abdubaa Boru",
-        email: "Abdubaa@gmail.com",
-        About: "Hello! I'm Abdubaa Boru, a computer science student dedicated to leveraging technology to solve real-world challenges. My studies at Borana  University  have equipped me with a strong foundation in  data structures, software engineering principles, database management.I'm particularly interested in developing sustainable solutions, creating accessible technology, improving healthcare through data. This website serves as a portfolio of my work, showcasing projects that reflect my commitment to creating impactful and efficient solutions.",
-    },
     {
         image: sabona,
         name: "Sabona Marara",
@@ -40,6 +34,11 @@ export const devabout = [
         email: "Mubarak@gmail.com",
         About: "Hey! 👋 Welcome to my digital corner! I'm Mubarak mahammad, a computer science student fueled by a passion for all things tech. From the elegance of algorithms to the magic of machine learning, I find myself constantly drawn to the power and potential of code.",
     },
-   
+     {
+        image: abduba,
+        name: "Abdubaa Boru",
+        email: "Abdubaa@gmail.com",
+        About: "Hello! I'm Abdubaa Boru, a computer science student dedicated to leveraging technology to solve real-world challenges. My studies at Borana  University  have equipped me with a strong foundation in  data structures, software engineering principles, database management.I'm particularly interested in developing sustainable solutions, creating accessible technology, improving healthcare through data. This website serves as a portfolio of my work, showcasing projects that reflect my commitment to creating impactful and efficient solutions.",
+    },
 
 ]
